@@ -1,0 +1,52 @@
+/******* MIXINS AND FUCTION *******/
+
+/** MIXINS **/
+
+@mixin wrapper ($width: 90%, $max-width: none){
+	width: $width;
+	max-width: $max-width;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* CENTRAR X */
+
+@mixin translateX($left: 50%){
+	position: absolute;
+	left: $left;
+	transform: translateX(-$left); 
+}
+/* CENTRAR Y */
+
+@mixin translateY($top: 50%){
+	position: absolute;
+	left: $top;
+	transform: translateY(-$top); 
+}
+
+/* CENTRAR XY */
+
+@mixin translate($left: 50%, $top: 50%){
+	position: absolute;
+	top: $top;
+	left: $left;
+	transform: translate(-$left, -$top); 
+}
+
+
+/* FUNTIONS */
+
+//PX TO REM
+
+//PX TO REM
+@function rem($size, $base:16) {
+  $remSize: $size / $base;
+  @return #{$remSize}rem;
+}
+
+//PX TO EM
+@function em($size, $base:16) {
+  $emSize: $size / $base;
+  @return #{$emSize}em;
+}
+

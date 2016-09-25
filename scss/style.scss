@@ -1,0 +1,33 @@
+/********************************************/
+/*		       	   $STYLES                  */
+/********************************************/
+
+/** 
+* Incluimos todos los modulos paraobtener el css definitivo
+**/
+//@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet');
+
+/** LIB **/
+
+@import "lib/mixins.scss";
+
+/** BASE **/
+
+@import "base/normalize.scss";
+@import "base/contenido.scss";
+@import "base/utils.scss";
+
+
+/** ELEMENTOS **/
+
+@import "elementos/images.scss";
+@import "elementos/tipografia.scss";
+@import "elementos/fonts.scss";
+
+/** LAYOUT **/
+
+@import "layout/site.scss";
+
+/** ABSTRACCIONES Y OBJETOS **/
+
+@import "abstracciones/button.scss";

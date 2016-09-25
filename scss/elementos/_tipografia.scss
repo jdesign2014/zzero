@@ -1,0 +1,54 @@
+/* COLORS */
+
+$gray   			: #606060;
+$orange				: #fa997e;
+$blue 	 			: #49aecc;
+$blue-dark			: #5a739c;
+$green				: #5f8b8c;
+$white				: white;
+$black				: black;
+$pink				: #db8d9a;		
+$bg-color			: #edecec;
+$bg-header			: #00a1cd;
+$bg-footer			: #818181;
+
+$color-logo			: $blue;
+$color-text			: $gray;
+$color-text-ligthten : lighten($gray, 20%);
+$color-header		: lighten($gray, 75%);
+
+$color-text-blue	: $blue;
+$color-text-orange	: #fa997e;
+$color-text-green	: #4b8c8d;
+$color-text-white	: white;
+$color-text-footer	: #dbdbdb;
+
+$menu-bg-color	: $blue;
+$menu-iten		: $gray;
+$menu-iten-hover: $blue;
+
+/* 	ICON COLOR  */
+
+$icon-gray 		: #edecec;
+$icon-hover		: $gray;
+
+$bg-wapper		: #ececec;
+$bg-fotter		: #818181;
+
+
+/* FONTS */
+
+$sans-serif: 'Ubuntu', sans-serif;
+$sans : 'Ubuntu', serif;
+$headers-font-weigth: bold;
+
+/* SIZES */
+
+h1,h2,h3,h4,h5,h6{
+	color: $gray;
+	font-weight: $headers-font-weigth;
+	font-family: $sans-serif;
+}
+
+$header-height : 6rem;
+
