@@ -1,4 +1,5 @@
 jQuery(document).ready(function($){
+		/*  MENU HANDLER */
 
 	$('#header__handler').on('click', function(){
 		/* Slider por css */
@@ -9,6 +10,11 @@ jQuery(document).ready(function($){
 
 	$('#icon-close').on('click', function(){
 		$('nav').slideUp('400');
+	});
+
+		/* SERVICIOS */
+	$('#js-sub-menu-servicios').hover(function(){
+		$('.sub-menu-servicios').slideToggle(400);
 	});
 	
 		/* MOVER LOS GRANAJES A LA VEZ DANDO A EXITO */
