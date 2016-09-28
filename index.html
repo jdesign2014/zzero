@@ -12,9 +12,9 @@
 
 	<header id="main-header">
 		<div id="header">
-			<div class="header__logo">
-				<a href="#"><svg class="svg-logozzero"><use xlink:href="images/sprite.svg#svg-logozzero"></use></svg></a>
-			</div>
+			
+			<a href="#" class="logo"><svg class="svg-logozzero"><use xlink:href="images/sprite.svg#svg-logozzero"></use></svg></a>
+			
 			<div id="header__handler" class="menu">
 				<svg class="svg-menu"><use xlink:href="images/sprite.svg#svg-menu"></use></svg>
 			</div>
@@ -22,9 +22,13 @@
 		<nav>
 			<ul class="nav__menu">
 				<li><a href="#">Home</a></li>
-				<li><a href="#">Diseño y desarrollo web</a></li>
-				<li><a href="#">Crear tienda Online</a></li>
-				<li><a href="#">Posicionamiento web</a></li>
+					<li id="js-sub-menu-servicios" class="sub-menu-parent"><a href="#">Servicios</a>
+						<ul class="sub-menu-servicios">	
+							<li><a href="#">Diseño y desarrollo web</a></li>
+							<li><a href="#">Crear tienda Online</a></li>
+							<li><a href="#">Posicionamiento web</a></li>
+						</ul>
+					</li>
 				<li><a href="#">ZZero</a></li>
 				<li><a href="#">Blog</a></li>
 				<li class="nav__last-item"><a href="#">Contactar</a></li>
@@ -97,36 +101,36 @@
 
 		</article>
 	</section>
-	<div class="line line-blue"><span></span></div>
+	<!--<div class="line line-blue"><span></span></div>-->
 	
 	<section class="features">
-		<div class="desarrollo-web bg-section">
+		<div class="bg-section">
 			<h1>Crear pagina web</h1>
 			<figure><svg class="svg-web"><use xlink:href="images/sprite.svg#svg-diseweb"></use></svg></figure>
 			<article class="feature__desarrollo-web">
 				<p>Si lo que necsitas son mas clientes y mejorar tu negocio, ZZERO te ayudara a conseguirlo.</p>
 				<span class="rrss"></span>
 			</article>
-			<div class="feature-button"><button class="view btn-blue">Enseñamelo</button>	</div>
+			<button class="btn-blue">Enseñamelo</button>
 		</div>		
-		<div class="shop-online bg-section">
+		<div class="bg-section">
 			<h1>Tienda ONLINE</h1>
 			<figure><svg class="svg-posicionamiento"><use xlink:href="images/sprite.svg#svg-posicionamiento"></use></svg></figure>
 			<article class="feature__shop-online"><p>¿Tienes una tienda fisica?, o bien quieres emprender en un nuevo negocio. Crea tu propia tienda online.</p>
 				<span class="rrss"></span>
 			</article>
-			<div class="feature-button"><button class="view btn-blue">Enseñamelo</button></div>	
+			<button class="btn-blue">Enseñamelo</button>
 		</div>		
-		<div class="posicionamiento bg-section">
+		<div class="bg-section">
 			<h1>Posicionamiento web</h1>
 			<figure><svg class="svg-tienda"><use xlink:href="images/sprite.svg#svg-tienda"></use></svg></figure>
-			<article class="feature__poscionamiento.web"><p>Para que una web sea rentable y tenga exito, bien tengas una web corporativa o una tienda online , para tener exito necesitas que te vean.</p>
+			<article class="article-posicionamiento"><p>Para que una web sea rentable y tenga exito, bien tengas una web corporativa o una tienda online , para tener exito necesitas que te vean.</p>
 				<span class="rrss"></span></article>
-			<div class="feature-button"><button class="view btn-blue">Enseñamelo</button></div>
-		</div>			
-		<div class="line line-gray"><span></span></div>
+			<button class="btn-blue">Enseñamelo</button>
+		</div>		
+		
 	</section>
-	
+	<div class="line line-gray"><span></span></div>
 	<!-- QUE HACEMOS -->
 
 	<section class="ok">
@@ -135,7 +139,7 @@
 	
 		<div class="btn-exito"><button class="btn-white">Asesorame</button></div>
 	</section>
-
+	<div class="line line-blue"><span></span></div>
 	<section class="back">
 		<div class="image-back">
 			<figure><svg class="svg-lanzate"><use xlink:href="images/sprite.svg#svg-lanzate"></use></svg></figure>
@@ -158,12 +162,11 @@
 <div class="line line-white"><span></span></div>
 	<section class="posicionate">
 		<div class="image-position">
-			<article><span>POSICIONATE<span> mejor que tu competencia</article>
+			<div class="title-posicionate"><span>POSICIONATE<span> mejor que tu competencia</div>
 			<div class="podio">
 				<svg class="svg-podio"><use xlink:href="images/sprite.svg#svg-podio"></use></svg>
-			</div>
-			<div class="btn-posicionate">
-				<button class="btn-gosh-blue">Quiero hacerlo</button>
+		
+				<button class="btn-gosh-blue btn-posicionate">Quiero hacerlo</button>
 			</div>
 		</div>
 		<article class="article-position">

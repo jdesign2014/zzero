@@ -2,6 +2,7 @@
 
 /* GENERAL */
 body{
+	background-color: lighten($gray,60%);
 	font-family: $sans-serif;
 	color: $gray;
 	h1{
@@ -27,75 +28,85 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 
 /* HEADER */
 #main-header{
-	;
-	display:fixed;
-	position:relative;
-}
-#header{
-	height: $header-height;
-	width: 100%;
-	display:flex;
-	align-items: center;
-	justify-content:space-around;
-	
-	.header__logo{
-		width: 15.5rem;
-		height: 4.7rem;
-	}
-	.menu{
-		width: 2rem;
-		height: 2rem;
-		cursor: pointer;
-	}
-}
+		position: fixed;
+		background-color: $white;
+		width: 100%;
+		z-index: 1;
+		height: 5.25em;
+		margin-top: -5.25em;
 
-nav{
-	width: 100%;
-	position:absolute;
-	background-color: $menu-bg-color;
-	text-transform: uppercase;
-	color: $white;
-	font-family: $sans;
-	font-size: 1.3rem;
-	box-shadow:0 2px 4px lighten($gray, .8);
-	text-align: center;
-	top:0;
-	display:none;
-	z-index: 1;
+		.logo{
+			display: inline-block;
+			height: 5em;
+			width: 17em;
+		}
+		.menu{
+			margin-top: 1.4em;
+			margin-right: 1.3em;	
+			float: right;
+			display: inline-block;
+			width: 2.4em;
+			height: 2.4rem;
+			cursor: pointer;
+		}
 
-	/* SLIDEUP POR CSS*/
-	//height: auto;
-	//max-height: 0;
-	//overflow: hidden;
-	//transition: max-height .4s ease;
-	//&.displayed{
-		//max-height: rem(500);
-		//overflow: visible;
+
+	nav{
+		width: 100%;
+		position:absolute;
+		background-color: $menu-bg-color;
+		text-transform: uppercase;
 		
-	//}
-	/* FIN SLIDE UP POR CSS */
-	#icon-close{
-			position:relative;
-			cursor:pointer;
-			.nav__box{
-				position:absolute;
-				background-color: $blue;
-				font-size:3rem;
-				width: 5rem;
-				height:5rem;
-				border-radius: 50%;
-				line-height : 5rem;
-				left: 50%;
-				transform: translate(-50%,-50%);
-				box-shadow: 0 4px 3px lighten($gray, 35);
+		font-family: $sans;
+		font-size: 1.3rem;
+		box-shadow:0 2px 4px lighten($gray, .8);
+		text-align: center;
+		top:0;
+		display:none;
+		z-index: 2;
+		.nav__menu{
+			padding: 1em 0;
+			li:not(:last-child){
+				padding-bottom: .5em;
+			}
+			li{
+				color: $white;
 			}
 		}
-	a{
-			display: block;
-			padding: 1rem 0;
-	}
-	.nav__last-item{
-		padding-bottom: 1.8rem;
+		
+
+		.sub-menu-servicios{
+			font-style: $italic;					
+			li{
+				color: lighten($gray, 50);
+				font-size: 1.1em;
+			}
+		}
+		
+		
+		#icon-close{
+				position:relative;
+				cursor:pointer;
+				.nav__box{
+					position:absolute;
+					background-color: $blue;
+					font-size:3rem;
+					width: 5rem;
+					height:5rem;
+					border-radius: 50%;
+					line-height : 5rem;
+					left: 50%;
+					@include translate();
+					box-shadow: 0 4px 3px lighten($gray, 35);
+				}
+			}
+		a{
+				display: block;
+				padding: 1rem 0;
+		}
+		.nav__last-item{
+			padding-bottom: 1.8rem;
+		}
 	}
 }
 
@@ -104,7 +115,7 @@ nav{
 
 
 .slider-flex{
-	overflow: hidden;
+	margin-top:5.25em;
 	position: relative;
 	display: flex;
 	width: 100%;
@@ -116,27 +127,12 @@ nav{
 	//background-color: $bg-header;
 	//box-shadow: 0 4px 3px lighten($blue, 3);
 	justify-content: center;
-	svg{
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
 }
-.bg-header{
 
-
-	
-}
 .cover{
 	margin-top: 2em;
 	display: flex;
 	flex-direction: column;
-	
-
-   
 }
 .cover-reverse{
 	position: relative;
@@ -144,17 +140,16 @@ nav{
 	display: flex;
 	justify-content: flex-end;
 	flex-direction: column-reverse;
-
-
-    
 }
+
+/* NAME */
+
 .name__objetivo{
 	position: absolute;
 	color: lighten($blue, 40);
 	margin-left: .6em;
 	font-size: 1rem;
 	margin-top: 1.5em;
-	
 }
 .name__vision{
 	position: absolute;
@@ -164,9 +159,6 @@ nav{
 	top: 8em;
 	color: lighten($orange, 15);
 	font-size: 1rem;
-
-
-
 }
 .name__idea{
 	position: absolute;
@@ -189,6 +181,9 @@ nav{
 	top: 10em;
 	font-size: 1rem;
 }
+
+/* ARROWS */
+
 .arrows{
 	position: relative;
 	width: 4.4em;
@@ -230,6 +225,9 @@ nav{
 		fill: lighten($green, 40);
 	}
 }
+
+/* GRANAJE */
+
 .content-granaje-objetivo{
 	position: relative;
 	width: 4em;
@@ -306,78 +304,79 @@ nav{
       transform: rotate(-1720deg);
      }
   }
-  /************** DEVELOPMENT FEATURES ***************/
 
-.development{
-	@include wrapper(); 
-}
+/* LINE */
+
 .line{
 	position: relative;
 	width: 100%;
 	height: .2em;
-	margin-top: 1.3em;
-}
-
-.features{
-   
-	background-color: lighten($gray,60%);
-	p{
-		padding-top: 2em;
-		padding-bottom: .4em;
-		padding-left: .4em;
-		padding-right: .4em;
+	margin-top: 0;
+	span{
+		@include translateX();
+		width: 0;
+		height: 0;
+		border-right: 1.5em solid transparent; 
+		border-left: 1.5em solid transparent;
 	}
-}
-
-.bg-section{
-	@include wrapper();
-	background-color: $white;
-	margin-top: 1em;
-	padding-bottom:2em;
-
 }
 .line-blue{
 	background-color: $blue;
 	span{
-		position: absolute;
-    	@include translateX();
-		z-index: 1;
-		width: 0;
-		height: 0;
 		border-top: 1em solid $blue;
-		border-right: 1.5em solid transparent; 
-		border-left: 1.5em solid transparent;
+		
 	}
 }
-
-/* CARACTERISTICAS */
-
 .line-gray{
+	margin-top: 1em;
 	background-color: lighten($gray,60%);
 	span{
-		position: absolute;
-    	@include translateX();
-		z-index: 1;
-		width: 0;
-		height: 0;
 		border-top: 1em solid lighten($gray,60%);
-		border-right: 1.5em solid transparent; 
-		border-left: 1.5em solid transparent;
 	}
 }
 .line-white{
 	background-color: $white;
 	span{
-		position: absolute;
-    	@include translateX();
-		z-index: 1;
-		width: 0;
-		height: 0;
 		border-top: 1em solid $white;
-		border-right: 1.5em solid transparent; 
-		border-left: 1.5em solid transparent;
 	}
 }
+
+ /************** DEVELOPMENT FEATURES ***************/
+
+.development{
+	padding: 0 2em; 
+	padding-bottom:1.3em;
+	background-color: $white;
+}
+
+/* FEATURES */
+
+.features{
+   	@include wrapper();
+   	padding-top: .2em;
+	p{
+		padding-top: 2em;
+		padding-bottom: .4em;
+	}
+	.bg-section{
+		background-color: $white;
+		margin-top: 1em;
+		padding-bottom:2em;
+		padding-left:1em;
+		padding-right: 2em;
+		button{
+			width: 100%;
+			margin-top: 1em;	
+			text-align: center;
+		}
+		article{
+			width: 100%;
+		}
+	}
+}
+
+/* CARACTERISTICAS */
+
 .ok{
 	width: 100%;
 	height: 18.75rem;
@@ -386,8 +385,8 @@ nav{
 	article{
 		display: inline-block;
 		width: 50%;
-		padding-top: 3em;
-		padding-left: .7em;
+		margin-top: 3em;
+		margin-left: .7em;
 		font-size: 1.3em;	
 	}
 	figure{
@@ -399,14 +398,15 @@ nav{
 			width: 13em;
 		}
 	}
-}
-.btn-exito{
-	padding-top: 2em;
-	padding-left: 1em;
+	.btn-exito{
+		margin-top: 2em;
+		margin-left: 1em;
+	}
 }
 /* BACK */
 
 .back{
+	background-color: $white;
 	display: inline-block;
 	width: 100%;
 	
@@ -435,18 +435,16 @@ nav{
 }
 .image-back{
 	display: inline-block;
-	background-color: red;
+	//background-color: red;
 	height: 20.75rem;
 }
 .article-back{
-	background-color: skyblue;
+	//background-color: skyblue;
 	display: inline-block;
 	height: 20.75rem;
 	padding: 6em 2em;
-	
-	span{
-		//display: inline-block;
-	}
+
+
 	[class*="icon-"]{
 		padding: 0 .3em;
 
@@ -499,19 +497,24 @@ nav{
 .image-position{
 	height: 21em;
 	position: relative;
-	article{
-		width: 100%;
+
+	.title-posicionate{
+		width: 16em;
 		padding-top: 1.4em;
 		text-align: center;
 		font-size: 1.3em;	
 		color: $gray;
+		left: 50%;
+		margin-left: -8em;
+		position: absolute;
+	
 		span{
 			font-weight: 800;
 		}
 	}
 }
 .article-position{
-	background-color: skyblue;
+	//background-color: skyblue;
 	display: inline-block;
 	height: 21rem;
 	padding: 6em 2em;
@@ -531,14 +534,18 @@ nav{
 	@include translate();
 	width: 14em;
 	height: 11em;
+
 }
 	.btn-posicionate{
-		text-align: center;
-		margin-top: 12rem;
-}
+		margin-left: 15%;
+		margin-top: 1em;
 
+
+	
+	}
 
  	.text-position{
+ 		
  		display: inline;
  		line-height: 1.5rem;
  	}
@@ -692,3 +699,174 @@ footer{
 
 	
 }
+/******** MEDIA QUERIES **********/
+
+@media screen and (min-width: em(625)){
+	
+	
+	
+}
+
+@media screen and (min-width: em(716)){
+	
+		/* HEADER */
+
+#main-header{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: $white;
+
+		.menu{
+			display: none;
+		}
+
+		nav{
+			width: auto;
+			height: auto;
+			position:relative;
+			background-color: transparent;
+			text-align: left;
+			font-size: .9rem;
+			box-shadow:none;
+			display: inline-block;
+	
+			.nav__menu{
+				display: flex;
+				padding: none;
+				li:not(:last-child){
+					padding-bottom: none;
+				}
+				li{
+					padding:0 .5em;
+					color: $gray;
+				}
+			}
+
+		
+			.sub-menu-servicios{
+					display: none;
+					margin-left: 0;
+					background-color: $white;
+					position: absolute;
+					font-style: $italic;
+					padding: .8em 0;  
+					box-shadow: 5px 5px 9px rgba(0,0,0,.4);
+				li{
+					color: lighten($gray,20);
+					font-size: 1em;
+					padding:0 0;
+					padding-right: .5em; 
+					a{
+						padding: .9em .5em;
+					}
+				}
+			}
+			
+			#icon-close{
+				display: none;	
+			}			
+			
+			a{
+				display: block;
+				padding: 1rem .5em;
+				&:hover{
+					color: $blue;
+				}
+			
+				.nav__last-item{
+					padding-bottom: none;
+				
+			    }
+			}
+		}
+	}	
+	/* END HEADER */
+
+	.features{
+	   	display: flex;
+	   	flex-wrap: wrap;
+	   	justify-content: space-between;
+		.bg-section{
+			width: 48%;
+		}
+	}
+	/* CARACTERISTICAS */
+
+	.ok{
+		article{
+			width: 40%;
+			margin-left: 2.7em;
+			
+		}
+		figure{
+			margin-top: 2em; 
+			svg{
+				width: 20em;
+				height: 13em;
+			}
+		}
+		.btn-exito{
+			margin-top: 2em;
+			margin-left: 3.5em;
+		}
+	}
+
+	/* BACK */
+
+	.back{
+		background-color: $white;
+		display: flex;
+		justify-content: space-between;
+		padding-top: 1em;
+		padding-bottom: 2em;
+	}
+	.image-back{
+		width: 48%;
+	}
+	.article-back{
+		width: 48%;
+	}
+
+	/* PODIO */
+
+	.posicionate{
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		padding-top: 1em;
+		padding-bottom: 2em;
+		.title-posicionate{
+			width: 16em;
+			padding-top: .5em;
+			text-align: center;
+			font-size: 1.3em;	
+			color: $gray;
+			left: 50%;
+			margin-left: -8em;
+			position: absolute;
+		
+			span{
+				font-weight: 800;
+			}
+	}
+		
+	}
+	.image-position{
+		width: 48%;
+	}
+	.article-position{
+		width: 48%;
+		margin-left: 1.5em; 
+	}
+	.podio{
+
+		width: 16em;
+		height: 13em;
+	}
+		.btn-posicionate{
+			margin-left: 3.5em;
+		}
+	 	
+} /* fin media query */
+
