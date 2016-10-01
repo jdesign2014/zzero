@@ -415,6 +415,13 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
   outline: 0 none;
 }
 
+.wrapper {
+  width: 100;
+  max-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /** HTML ELEMENTS **/
 /* HEADER */
 #main-header {
@@ -812,7 +819,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
   background-color: white;
   margin-top: 1em;
   padding-bottom: 2em;
-  padding-left: 1em;
+  padding-left: 2em;
   padding-right: 2em;
 }
 .features .bg-section button {
@@ -825,7 +832,9 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 }
 
 /* CARACTERISTICAS */
+/* OK */
 .ok {
+  position: relative;
   width: 100%;
   height: 18.75rem;
   background-color: #49aecc;
@@ -839,10 +848,10 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
   font-size: 1.3em;
 }
 .ok figure {
-  position: absolute;
+  position: relative;
   display: inline-block;
   margin-top: 5em;
-  right: 0;
+  float: right;
 }
 .ok figure svg {
   width: 13em;
@@ -1010,8 +1019,17 @@ footer {
 .footer__menu:not(:first-child) {
   padding-top: .8rem;
 }
-.footer__menu div {
+.footer__menu li a {
+  display: block;
+  padding: .5em 1em 0;
+  font-style: italic;
+}
+
+[class*="icon-circle"] {
   float: right;
+  cursor: pointer;
+  font-size: 1.4em;
+  cursor: pointer;
 }
 
 .mapa--web {
@@ -1025,11 +1043,6 @@ footer {
 .mapa--web li:last-child {
   padding-bottom: .4em;
 }
-.mapa--web a {
-  display: block;
-  padding: .5em 1em 0;
-  font-style: italic;
-}
 
 .last--works {
   color: #dbdbdb;
@@ -1042,25 +1055,13 @@ footer {
 .last--works li:last-child {
   padding-bottom: .4em;
 }
-.last--works a {
-  display: block;
-  padding: .5em 1em 0;
-  font-style: italic;
-}
 
 .rrss {
   color: #dbdbdb;
   font-size: 1em;
   padding-top: .6em;
   padding-bottom: .3em;
-}
-.rrss.footer-rrss-displayed {
   display: none;
-}
-.rrss a {
-  display: block;
-  padding: .5em 1em 0;
-  font-style: italic;
 }
 
 .contactanos {
@@ -1077,24 +1078,16 @@ footer {
   display: inline-block;
   margin-left: 1em;
 }
-.contactanos [class*="icon-"] {
-  font-size: .9em;
-  width: 15px;
-}
 .contactanos.footer-contactanos-displayed {
   display: none;
 }
 
 .footer__logo {
   position: absolute;
-  width: 19.5em;
-  height: 10em;
-  right: 2em;
-}
-
-[class*='icon-'] {
-  cursor: pointer;
-  font-size: 1.4em;
+  display: inline-block;
+  right: 0;
+  margin-right: 5%;
+  width: 23em;
 }
 
 .enlaces-footer {
@@ -1139,7 +1132,75 @@ footer {
   padding-right: .8em;
 }
 
+/* END FOOTER */
 /******** MEDIA QUERIES **********/
+@media screen and (min-width: 30.1875em) {
+  .ok figure svg {
+    width: 15em;
+  }
+
+  /* BACK */
+  .back .back-title {
+    font-size: 2.5em;
+    margin-top: 1em;
+  }
+
+  .image-back {
+    display: inline-block;
+    height: 20.75rem;
+  }
+}
+@media screen and (min-width: 34.1875em) {
+  /* OK */
+  .ok article {
+    width: 40%;
+    margin-left: 2.7em;
+  }
+  .ok figure {
+    margin-top: 2em;
+  }
+  .ok figure svg {
+    width: 17em;
+    height: 13em;
+  }
+  .ok .btn-exito {
+    margin-top: 2em;
+    margin-left: 3.5em;
+  }
+
+  /* BACK */
+  .back figure {
+    height: 13em;
+    margin-top: 3em;
+  }
+  .back .back-title {
+    width: 30%;
+    font-size: 2.3em;
+    margin-top: 2em;
+  }
+
+  .add-presupuesto {
+    margin-top: 2em;
+    text-align: center;
+  }
+  .add-presupuesto input {
+    border: none;
+    border-bottom: 2px solid #939393;
+    padding-bottom: .3rem;
+  }
+  .add-presupuesto input[name="telefono"] {
+    width: 8.3rem;
+  }
+  .add-presupuesto input[name="mail"] {
+    width: 17rem;
+    margin-right: 1rem;
+  }
+
+  .btn-add-presupuesto {
+    text-align: center;
+    margin-top: 3rem;
+  }
+}
 @media screen and (min-width: 44.75em) {
   /* HEADER */
   #main-header {
@@ -1184,6 +1245,22 @@ footer {
     padding: 0 .5em;
     color: #606060;
   }
+  #main-header nav .nav__menu a {
+    padding-bottom: 1.8em;
+    display: block;
+    padding: 1rem .5em;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom .6s ease;
+    transition: border-bottom .6s ease;
+  }
+  #main-header nav .nav__menu a:hover {
+    color: #49aecc;
+    background-color: #f9f9f9;
+    border-bottom: 2px solid #49aecc;
+  }
+  #main-header nav .nav__menu a .nav__last-item {
+    padding-bottom: none;
+  }
   #main-header nav .sub-menu-servicios {
     display: none;
     margin-left: 0;
@@ -1205,23 +1282,15 @@ footer {
   #main-header nav #icon-close {
     display: none;
   }
-  #main-header nav a {
-    display: block;
-    padding: 1rem .5em;
-  }
-  #main-header nav a:hover {
-    color: #49aecc;
-  }
-  #main-header nav a .nav__last-item {
-    padding-bottom: none;
-  }
 
   /* END HEADER */
+  /* FEATURES */
   .features {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    min-height: 27.4375em;
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
@@ -1230,25 +1299,33 @@ footer {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .features p {
+    min-height: 7.5em;
+  }
   .features .bg-section {
     width: 48%;
   }
+  .features .bg-section button {
+    width: 100%;
+    margin-bottom: 1em;
+    text-align: center;
+  }
 
   /* CARACTERISTICAS */
+  /* OK */
   .ok article {
-    width: 40%;
-    margin-left: 2.7em;
-  }
-  .ok figure {
-    margin-top: 2em;
+    margin-left: 3.7em;
+    width: 30%;
+    font-size: 1.7em;
+    margin-top: 1em;
   }
   .ok figure svg {
-    width: 20em;
-    height: 13em;
+    width: 25em;
+    height: 14em;
   }
   .ok .btn-exito {
-    margin-top: 2em;
-    margin-left: 3.5em;
+    margin-top: 1.3em;
+    margin-left: 6.3em;
   }
 
   /* BACK */
@@ -1265,13 +1342,25 @@ footer {
     padding-top: 1em;
     padding-bottom: 2em;
   }
-
-  .image-back {
+  .back .image-back {
     width: 48%;
   }
-
-  .article-back {
+  .back figure {
+    height: 10em;
+    margin-top: 2em;
+  }
+  .back .article-back {
     width: 48%;
+  }
+  .back .add-presupuesto input[name="telefono"] {
+    width: 6.7rem;
+  }
+  .back .add-presupuesto input[name="mail"] {
+    width: 12rem;
+  }
+  .back .btn-add-presupuesto {
+    text-align: center;
+    margin-top: 1.7rem;
   }
 
   /* PODIO */
@@ -1324,7 +1413,177 @@ footer {
     margin-left: 3.5em;
   }
 }
-/* fin media query */
+@media screen and (min-width: 48em) {
+  /* OK */
+  .ok article {
+    margin-left: 4.7em;
+    width: 30%;
+    font-size: 2em;
+    margin-top: 1em;
+  }
+  .ok figure svg {
+    width: 25em;
+    height: 14em;
+  }
+  .ok .btn-exito {
+    margin-top: 1.3em;
+    margin-left: 9.4em;
+  }
+}
+@media screen and (min-width: 61.4375em) {
+  /* FEATURES */
+  .features {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 27.4375em;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .features p {
+    min-height: 7.5em;
+  }
+  .features .bg-section {
+    width: 32%;
+  }
+  .features .bg-section button {
+    width: 100%;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  .features .padding-title h1 {
+    padding-bottom: 2.52em;
+  }
+
+  /* OK */
+  .ok article {
+    margin-left: 4.7em;
+    width: 30%;
+    font-size: 2em;
+    margin-top: 1em;
+  }
+  .ok figure svg {
+    width: 25em;
+    height: 14em;
+  }
+  .ok .btn-exito {
+    margin-top: 1.3em;
+    margin-left: 9.4em;
+  }
+
+  /* FOOTER */
+  footer {
+    width: 100%;
+    height: 100%;
+    background-color: #818181;
+    position: relative;
+  }
+
+  .footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-size: 1.3em;
+    padding-top: 2rem;
+  }
+
+  .footer__menu {
+    border-bottom: none;
+    color: #dbdbdb;
+    padding-bottom: .3rem;
+    padding-top: .8rem;
+    width: 25%;
+  }
+  .footer__menu li a {
+    display: block;
+    padding: .5em 0 0;
+    font-style: italic;
+  }
+  .footer__menu .title {
+    padding: 0 .3em;
+    padding-bottom: .3em;
+    border-bottom: 2px solid #dbdbdb;
+  }
+
+  [class*="icon-circle"] {
+    display: none;
+  }
+
+  .mapa--web {
+    color: #dbdbdb;
+    font-size: .8em;
+  }
+  .mapa--web.mapa--web--displayed {
+    display: block;
+  }
+  .mapa--web li:last-child {
+    padding-bottom: .4em;
+  }
+
+  .last--works {
+    color: #dbdbdb;
+    font-size: .8em;
+  }
+  .last--works.footer-last-works-displayed {
+    display: block;
+  }
+  .last--works li:last-child {
+    padding-bottom: .4em;
+  }
+
+  .rrss {
+    font-size: 2em;
+    padding-bottom: .3em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .rrss li {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 25%;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+  }
+
+  .contactanos {
+    color: #dbdbdb;
+  }
+  .contactanos.footer-contactanos-displayed {
+    display: block;
+  }
+
+  .footer__logo {
+    width: 26em;
+    top: 12.8125em;
+  }
+
+  .enlaces-footer {
+    padding-top: 7rem;
+  }
+
+  .avisos-legales {
+    font-size: 1rem;
+  }
+
+  .copy {
+    font-size: .8em;
+    padding-top: .1em;
+  }
+
+  /* END FOOTER */
+}
 /** ABSTRACCIONES Y OBJETOS **/
 button {
   font-family: "Ubuntu", sans-serif;
